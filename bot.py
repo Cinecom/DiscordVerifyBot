@@ -40,7 +40,8 @@ class VerificationBot(commands.Bot):
         
         if self.verification_channel:
             logger.info(f"Verification channel found: {self.verification_channel.name}")
-            await self.post_welcome_message()
+            # Only post welcome message if requested via command, not on every startup
+            logger.info("Bot ready - verification system active")
         else:
             logger.error(f"Could not find verification channel with ID: {VERIFICATION_CHANNEL_ID}")
     
@@ -83,3 +84,13 @@ class VerificationBot(commands.Bot):
                 
         except Exception as e:
             logger.error(f"Failed to notify officers: {e}")
+    
+    @commands.command(name='post_welcome')
+    @commands.has_permissions(administrator=True)
+    async def post_welcome_command(self, ctx):
+        """Command to manually post the welcome message."""
+        if ctx.channel.id == VERIFICATION_CHANNEL_ID:
+            await self.post_welcome_message()
+            await ctx.message.delete()  # Delete the command message
+        else:
+            await ctx.send("This command can only be used in the verification channel.", delete_after=5)
