@@ -27,21 +27,21 @@ GAMEPLAY_ROLES = {
 
 # Class Icons (custom server emojis)
 CLASS_ICONS = {
-    'Druid': ':wowdruid:',
-    'Hunter': ':wowhunter:',
-    'Mage': ':wowmage:',
-    'Priest': ':wowpriest:',
-    'Rogue': ':wowrogue:',
-    'Shaman': ':wowshaman:',
-    'Warlock': ':wowwarlock:',
-    'Warrior': ':wowwarrior:'
+    'Druid': '<:wowdruid:1236271638153003048>',
+    'Hunter': '<:wowhunter:1236271639524540530>',
+    'Mage': '<:wowmage:1236271641013784607>',
+    'Priest': '<:wowpriest:1236271645174267984>',
+    'Rogue': '<:wowrogue:1236271646554194012>',
+    'Shaman': '<:wowshaman:1236271647976325130>',
+    'Warlock': '<:wowwarlock:1236271650258026506>',
+    'Warrior': '<:wowwarrior:1236271651658666064>'
 }
 
 # Role Icons (custom server emojis)
 ROLE_ICONS = {
-    'DPS': ':wowdps:',
-    'Heal': ':wowhealer:',
-    'Tank': ':wowtank:'
+    'DPS': '<:wowdps:1236271995855831040>',
+    'Heal': '<:wowhealer:1236271798962884660>',
+    'Tank': '<:wowtank:1236271945784361070>'
 }
 
 # Bot Messages
@@ -53,4 +53,4 @@ To gain access to all the member channels, please complete the verification belo
 Click the button below to start your verification process.
 """
 
-VERIFICATION_COMPLETE_MESSAGE = "🎉 **Verification Complete!** An officer will soon grant you membership access to the server."
+VERIFICATION_COMPLETE_MESSAGE = "An officer will soon grant you membership access to the server."
