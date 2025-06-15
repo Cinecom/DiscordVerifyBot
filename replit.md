@@ -87,8 +87,12 @@ This is a Discord verification bot built with Python and discord.py that manages
 - No database backup needed (stateless design)
 
 ## Changelog
-- June 15, 2025. Initial setup
+- June 15, 2025: Initial Discord verification bot setup
+- June 15, 2025: Integrated with existing Discord bot (App ID: 1382667974808436896)
+- June 15, 2025: Fixed persistent views and intent configuration
+- June 15, 2025: Bot successfully deployed and operational
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Bot Integration: Uses existing Discord bot rather than creating new one.

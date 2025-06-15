@@ -59,7 +59,7 @@ class VerificationView(ui.View):
     def __init__(self):
         super().__init__(timeout=None)
     
-    @ui.button(label="Start Verification", style=discord.ButtonStyle.green, emoji="🚀")
+    @ui.button(label="Start Verification", style=discord.ButtonStyle.green, emoji="🚀", custom_id="start_verification")
     async def start_verification(self, interaction: discord.Interaction, button: ui.Button):
         """Handle start verification button click."""
         # Show character name modal
@@ -71,7 +71,7 @@ class ClassSelectionView(ui.View):
     """View for class selection buttons."""
     
     def __init__(self):
-        super().__init__(timeout=300)  # 5 minute timeout
+        super().__init__(timeout=None)
         
         # Create buttons for each class
         for class_name, role_id in CLASS_ROLES.items():
@@ -134,7 +134,7 @@ class RoleSelectionView(ui.View):
     """View for gameplay role selection buttons."""
     
     def __init__(self):
-        super().__init__(timeout=300)  # 5 minute timeout
+        super().__init__(timeout=None)
         
         # Create buttons for each role
         for role_name, role_id in GAMEPLAY_ROLES.items():
@@ -200,8 +200,3 @@ class RoleSelectionView(ui.View):
                 logger.error(f"Error assigning role {role_name}: {e}")
         
         return callback
-    
-    async def on_timeout(self):
-        """Handle view timeout."""
-        for item in self.children:
-            item.disabled = True
