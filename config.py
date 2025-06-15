@@ -25,32 +25,32 @@ GAMEPLAY_ROLES = {
     'Tank': 1234230977866498098
 }
 
-# Class Icons (using common fantasy class symbols)
+# Class Icons (custom server emojis)
 CLASS_ICONS = {
-    'Druid': '🌿',
-    'Hunter': '🏹',
-    'Mage': '🔮',
-    'Priest': '✨',
-    'Rogue': '🗡️',
-    'Shaman': '⚡',
-    'Warlock': '🔥',
-    'Warrior': '⚔️'
+    'Druid': ':wowdruid:',
+    'Hunter': ':wowhunter:',
+    'Mage': ':wowmage:',
+    'Priest': ':wowpriest:',
+    'Rogue': ':wowrogue:',
+    'Shaman': ':wowshaman:',
+    'Warlock': ':wowwarlock:',
+    'Warrior': ':wowwarrior:'
 }
 
-# Role Icons
+# Role Icons (custom server emojis)
 ROLE_ICONS = {
-    'DPS': '⚔️',
-    'Heal': '💚',
-    'Tank': '🛡️'
+    'DPS': ':wowdps:',
+    'Heal': ':wowhealer:',
+    'Tank': ':wowtank:'
 }
 
 # Bot Messages
 WELCOME_MESSAGE = """
-**Welcome to the Discord Server!**
+# **Welcome to the <ERROR> Discord Server!**
 
 To gain access to all the member channels, please complete the verification below.
 
 Click the button below to start your verification process.
 """
 
-VERIFICATION_COMPLETE_MESSAGE = "🎉 **Verification Complete!** You now have access to all member channels. Welcome to the guild!"
+VERIFICATION_COMPLETE_MESSAGE = "🎉 **Verification Complete!** An officer will soon grant you membership access to the server."

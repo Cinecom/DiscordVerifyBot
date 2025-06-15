@@ -50,11 +50,11 @@ class VerificationBot(commands.Bot):
         try:
             # Create embed for welcome message
             embed = discord.Embed(
-                title="🛡️ Server Verification",
+                title="✅ Guild Verification",
                 description=WELCOME_MESSAGE,
                 color=0x00ff00
             )
-            embed.set_footer(text="Click the button below to begin verification")
+            
             
             # Create view with start verification button
             view = VerificationView()

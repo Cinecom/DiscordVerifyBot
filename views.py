@@ -59,7 +59,7 @@ class VerificationView(ui.View):
     def __init__(self):
         super().__init__(timeout=None)
     
-    @ui.button(label="Start Verification", style=discord.ButtonStyle.green, emoji="🚀", custom_id="start_verification")
+    @ui.button(label="Start Verification", style=discord.ButtonStyle.secondary, emoji="✅", custom_id="start_verification")
     async def start_verification(self, interaction: discord.Interaction, button: ui.Button):
         """Handle start verification button click."""
         # Show character name modal
