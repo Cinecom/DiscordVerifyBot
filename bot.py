@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 class VerificationBot(commands.Bot):
     def __init__(self):
         intents = discord.Intents.default()
+        intents.message_content = True
         intents.guilds = True
         
         super().__init__(
@@ -28,6 +29,13 @@ class VerificationBot(commands.Bot):
         self.add_view(VerificationView())
         self.add_view(ClassSelectionView())
         self.add_view(RoleSelectionView())
+        
+        # Sync slash commands
+        try:
+            synced = await self.tree.sync()
+            logger.info(f"Synced {len(synced)} command(s)")
+        except Exception as e:
+            logger.error(f"Failed to sync commands: {e}")
         
         logger.info("Bot setup completed")
     
@@ -85,12 +93,12 @@ class VerificationBot(commands.Bot):
         except Exception as e:
             logger.error(f"Failed to notify officers: {e}")
     
-    @commands.command(name='post_welcome')
+    @commands.hybrid_command(name='post_welcome')
     @commands.has_permissions(administrator=True)
     async def post_welcome_command(self, ctx):
         """Command to manually post the welcome message."""
         if ctx.channel.id == VERIFICATION_CHANNEL_ID:
             await self.post_welcome_message()
-            await ctx.message.delete()  # Delete the command message
+            await ctx.send("Welcome message posted!", ephemeral=True, delete_after=3)
         else:
-            await ctx.send("This command can only be used in the verification channel.", delete_after=5)
+            await ctx.send("This command can only be used in the verification channel.", ephemeral=True, delete_after=5)
